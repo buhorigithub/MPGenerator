@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fullscreen Chat Bot</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden; /* Prevents scrolling */
+            height: 100vh; /* Full viewport height */
+        }
+        
+        #botpress-webchat-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 9999;
+        }
+    </style>
+</head>
+<body>
+    <!-- Bot Integration Scripts -->
+    <script src="https://cdn.botpress.cloud/webchat/v2.2/inject.js"></script>
+    <script src="https://files.bpcontent.cloud/2024/12/05/11/20241205114222-MMTJ99TF.js"></script>
+    <script>
+        window.addEventListener('load', function() {
+            // Configure the webchat to be fullscreen
+            window.botpressWebChat.init({
+                composerPlaceholder: "Talk With Us",
+                containerWidth: '100%',
+                layoutWidth: '100%',
+                hideWidget: true,
+                disableAnimations: true,
+                showConversationsButton: false,
+                enableTranscriptDownload: false,
+                stylesheet: 'https://webchat-styler-css.botpress.app/prod/code/d3cf64af-9df5-42f0-9ee0-609c0a18413f/v91751/style.css'
+            });
+        });
+    </script>
+</body>
+</html>
